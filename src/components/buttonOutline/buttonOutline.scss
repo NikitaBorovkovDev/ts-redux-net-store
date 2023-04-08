@@ -1,0 +1,15 @@
+@import "../../style/variables.scss";
+@import "../../style/button.scss";
+
+.btn-outline {
+    background: transparent;
+}
+
+.btn__text-outline {
+    color: $main-color-primary;
+}
+.btn__lightGreen {
+    & .btn__text-outline {
+        color: #fff;
+    }
+}

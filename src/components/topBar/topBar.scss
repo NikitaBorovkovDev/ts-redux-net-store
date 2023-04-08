@@ -1,0 +1,33 @@
+@import "../../style/variables.scss";
+
+.topBar {
+    white-space: nowrap;
+    background-color: $main-color-grey-900;
+    height: 44px;
+    &__right-panel {
+        display: flex;
+        justify-content: flex-end;
+        & > *:not(:last-child) {
+            margin-right: 62px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        & > * {
+            margin-top: -1px;
+            flex: 1 1 calc(100% / 3);
+        }
+    }
+}
+.menu-secondary {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    & a {
+        cursor: pointer;
+    }
+}

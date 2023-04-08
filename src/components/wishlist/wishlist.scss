@@ -1,0 +1,8 @@
+@import "../../style/variables.scss";
+.wishlist {
+    font-size: 16px;
+    line-height: 26px;
+    padding-left: 26px;
+    color: $main-color-grey-800;
+    background: url("../../img/wishist.png") no-repeat left center/20px;
+}

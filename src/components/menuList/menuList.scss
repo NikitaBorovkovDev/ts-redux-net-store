@@ -1,0 +1,14 @@
+@import "../../style/variables.scss";
+.menu-list {
+    display: flex;
+    color: $main-color-grey-900;
+    font-weight: 700;
+    font-size: 16px;
+    &__item:not(:last-child) {
+        margin-right: 40px;
+    }
+}
+
+.danger-text {
+    color: $main-color-danger;
+}

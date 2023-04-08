@@ -1,0 +1,24 @@
+[
+    {
+        "subheading": "New collection",
+        "heading": "Menswear 2020",
+        "background": {
+            "image": "https://i.ibb.co/kJ0d0rG/herobg-2x.jpg",
+            "color": "#FBE3D3"
+        }
+    },
+    {
+        "subheading": "Old collection",
+        "heading": "Winter 2020",
+        "background": {"image": "https://i.ibb.co/PGFSz0M/winter.jpg"}
+    },
+    {
+        "subheading": "New collection",
+        "heading": ""
+    },
+    {
+        "subheading": "",
+        "heading": "Menswear 2020",
+        "background": {"image": "312", "color": "#FBE3D3"}
+    }
+]

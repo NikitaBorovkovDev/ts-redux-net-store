@@ -1,0 +1,19 @@
+@import "../../style/variables.scss";
+
+.search-input {
+    display: block;
+    border: 1px solid $main-color-grey-400;
+    padding: 12px 16px;
+    width: 360px;
+    border-radius: 4px;
+    margin-left: auto;
+    color: $main-color-grey-900;
+    background: url("../../img/search.png") no-repeat right center/16px;
+    background-origin: content-box;
+    &::placeholder {
+        font-family: "Lato";
+        font-weight: 400;
+        font-size: 14px;
+        color: $main-color-grey-600;
+    }
+}

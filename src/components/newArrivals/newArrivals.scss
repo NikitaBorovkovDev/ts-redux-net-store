@@ -1,0 +1,16 @@
+@import "../../style/variables.scss";
+.new-arrivals {
+    margin-top: 180px;
+    text-align: center;
+    &__heading {
+        color: $main-color-grey-900;
+    }
+    &__text-desc {
+        color: $main-color-grey-700;
+        text-align: center;
+    }
+    &__link {
+        color: $main-color-primary;
+        text-decoration: underline;
+    }
+}

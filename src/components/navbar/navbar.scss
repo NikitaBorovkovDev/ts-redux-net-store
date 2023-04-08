@@ -1,0 +1,22 @@
+.navbar {
+    width: 100%;
+    height: 84px;
+}
+
+.navbar__container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.navbar__logo {
+    margin-right: 60px;
+}
+
+.navbar__menu {
+}
+
+.navbar__toolbar {
+    display: flex;
+    align-items: center;
+    margin-left: 48px;
+}

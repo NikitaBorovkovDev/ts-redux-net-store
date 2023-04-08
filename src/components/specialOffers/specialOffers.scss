@@ -1,0 +1,36 @@
+@import "../../style/variables.scss";
+
+.special-offers {
+    height: 34px;
+    width: 100%;
+    background-color: $main-color-primary;
+    color: #fff;
+    & .swiper {
+        height: 100%;
+    }
+    & ._slide-content {
+        text-align: center;
+    }
+    & ._slide-content__link {
+        font-weight: 400;
+        text-decoration: underline;
+    }
+    & .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    & .swiper-button-prev,
+    .swiper-button-next {
+        position: absolute;
+        height: 100%;
+        width: 24px;
+    }
+    & .swiper-button-next {
+        background: url("../../img/Right-chevron.png") center/16px no-repeat;
+    }
+    & .swiper-button-prev {
+        background: url("../../img/Left-chevron.png") center/16px no-repeat;
+    }
+}

@@ -1,0 +1,239 @@
+@import "./variables.scss";
+@font-face {
+    font-family: "icon-arrows";
+    src: url("fonts/icon-arrows.eot?ugdy6l");
+    src: url("fonts/icon-arrows.eot?ugdy6l#iefix") format("embedded-opentype"),
+        url("fonts/icon-arrows.ttf?ugdy6l") format("truetype"),
+        url("fonts/icon-arrows.woff?ugdy6l") format("woff"),
+        url("fonts/icon-arrows.svg?ugdy6l#icon-arrows") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.icon-arrows {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "icon-arrows" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrowsBottom-Left:before {
+    content: "\e900";
+}
+.icon-arrowsBottom-Right:before {
+    content: "\e901";
+}
+.icon-arrowsDown:before {
+    content: "\e902";
+}
+.icon-arrowsLeft:before {
+    content: "\e903";
+}
+.icon-arrowsRight:before {
+    content: "\e904";
+}
+.icon-arrowsTop-Left:before {
+    content: "\e905";
+}
+.icon-arrowsTop-Right:before {
+    content: "\e906";
+}
+.icon-arrowsUp:before {
+    content: "\e907";
+}
+
+body {
+    font-family: "Lato";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.heading-1 {
+    font-weight: 900;
+    font-size: 46px;
+    line-height: 130%;
+}
+.heading-2 {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 130%;
+}
+.heading-3 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+}
+.heading-4 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+}
+.heading-5 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+}
+.heading-6 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 1px;
+}
+
+.display-1 {
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 130%;
+    letter-spacing: 1px;
+}
+.display-2 {
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 130%;
+    letter-spacing: 1px;
+}
+.display-3 {
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 130%;
+    letter-spacing: 1px;
+}
+.display-4 {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 130%;
+    letter-spacing: 1px;
+}
+
+.lead-bold {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+}
+.lead-regular {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.large-regular {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+}
+.large-bold {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.base-regular {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+}
+.base-bold {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+}
+
+.small-regular {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+}
+.small-bold {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.extrasmall-bold {
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 150%;
+}
+.extrasmall-regular {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+.extraextrasmall-regular {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 150%;
+}
+.extraextrasmall-bold {
+    font-weight: 900;
+    font-size: 10px;
+    line-height: 150%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.swiper-button-next {
+    right: 0;
+}
+.swiper-button-prev {
+    left: 0;
+}
+.swiper-button-disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+.swiper-pagination {
+    position: relative;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    color: $main-color-grey-800;
+}
+.swiper-pagination-bullet {
+    position: relative;
+    transition: opacity 0.3s ease, color 0.2s ease;
+    opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    cursor: pointer;
+}
+
+.text-danger {
+    color: $main-color-danger;
+}
+
+.hide {
+    display: none !important;
+}
