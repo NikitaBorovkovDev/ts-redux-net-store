@@ -15,8 +15,8 @@
         "currentPrice": "15.50",
         "discount": "-50",
         "params": {
-            "size": ["36", "37", "38", "39", "40"],
-            "color": ["pink", "blue", "yellow"]
+            "size": ["36", "40"],
+            "color": ["pink"]
         },
         "rating": "4.13"
     },
@@ -33,7 +33,7 @@
         "currentPrice": "31.00",
         "discount": "0",
         "params": {
-            "size": ["36", "37", "38", "39", "40"],
+            "size": ["36"],
             "color": ["pink", "blue", "yellow"]
         },
         "rating": "4.13"
@@ -51,8 +51,7 @@
         "currentPrice": "31.00",
         "discount": "0",
         "params": {
-            "size": ["36", "37", "38", "39", "40"],
-            "color": ["pink", "blue", "yellow"]
+            "size": ["36", "37", "38", "39", "40"]
         },
         "rating": "2.13"
     },
@@ -69,7 +68,6 @@
         "currentPrice": "15.50",
         "discount": "-50",
         "params": {
-            "size": ["36", "37", "38", "39", "40"],
             "color": ["pink", "blue", "yellow"]
         },
         "rating": "4.13"
@@ -87,8 +85,7 @@
         "currentPrice": "31.00",
         "discount": "0",
         "params": {
-            "size": ["36", "37", "38", "39", "40"],
-            "color": ["pink", "blue", "yellow"]
+            "color": ["pink"]
         },
         "rating": "3.33"
     },
@@ -105,8 +102,7 @@
         "currentPrice": "15.50",
         "discount": "-50",
         "params": {
-            "size": ["36", "37", "38", "39", "40"],
-            "color": ["pink", "blue", "yellow"]
+            "size": ["40"]
         },
         "rating": "4.13"
     },
