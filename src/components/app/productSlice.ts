@@ -1,20 +1,21 @@
-import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+import {createSlice, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
 import {IProduct} from "../../interfaces";
+import {RootState} from "./store";
+import {URL_PRODUCTS} from "../../usedUrls";
+import axios from "axios";
 
-export const fetchProducts: any = createAsyncThunk(
+export const fetchProducts = createAsyncThunk(
     "products/setProducts",
     async function (_, {rejectWithValue, dispatch, getState}) {
         try {
-            const res = await fetch(
-                "https://jsonplaceholder.typicode.com/users"
-            );
-            if (!res.ok) {
+            const res = await axios.get(URL_PRODUCTS);
+            console.log(res);
+            if (!(res.status >= 200 && res.status < 300)) {
                 console.log(res);
                 throw new Error(`${res.status}`);
             }
-            const data: IProduct[] = await res.json();
 
-            return data;
+            return res.data;
         } catch (error: any) {
             return rejectWithValue(error.message);
         }
@@ -23,44 +24,45 @@ export const fetchProducts: any = createAsyncThunk(
 
 interface InitialState {
     value: IProduct[];
-    status: string;
+    status: "fulfilled" | "pending" | "rejected";
     error: any;
 }
 
 const initialState: InitialState = {
     value: [],
-    status: "",
+    status: "pending",
     error: null,
 };
 
 export const productSlice = createSlice({
     name: "products",
     initialState,
-    reducers: {
-        setProducts: (state, action) => {
-            console.log("state=", state);
-            console.log("action=", action);
-            state.value = action.payload;
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchProducts.fulfilled, (state, action) => {
-                state.status = "fulfilled";
-                state.error = null;
-                state.value = action.payload;
-            })
-            .addCase(fetchProducts.pending, (state, action) => {
+            .addCase(
+                fetchProducts.fulfilled,
+                (state, action: PayloadAction<IProduct[]>) => {
+                    state.status = "fulfilled";
+                    state.error = null;
+                    state.value = action.payload;
+                }
+            )
+            .addCase(fetchProducts.pending, (state) => {
                 state.status = "pending";
                 state.error = null;
             })
-            .addCase(fetchProducts.rejected, (state, action) => {
-                state.status = "rejected";
-                state.error = action.payload;
-            });
+            .addCase(
+                fetchProducts.rejected,
+                (state, action: PayloadAction<any>) => {
+                    state.status = "rejected";
+                    state.error = action.payload;
+                }
+            );
     },
 });
 
-export const {setProducts} = productSlice.actions;
+export const selectProductsValue = (state: RootState) => state.products.value;
+export const selectProductsStatus = (state: RootState) => state.products.status;
 
 export default productSlice.reducer;

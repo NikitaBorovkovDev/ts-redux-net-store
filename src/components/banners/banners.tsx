@@ -1,8 +1,8 @@
-import ButtonOutline from "../buttonOutline/buttonOutline";
+import ButtonOutline from "../buttonOutline/ButtonOutline";
 import "./banners.scss";
 import {useEffect, useState} from "react";
-import Timer from "./bannersComponent/timer";
-import Banner from "./bannersComponent/banner";
+import Timer from "./bannersComponent/Timer";
+import Banner from "./bannersComponent/Banner";
 import SubscribeBanner from "./bannersComponent/SubscribeBanner";
 
 enum BannerType {

@@ -4,13 +4,13 @@ import App from "./components/app/App";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import "./style/style.scss";
 import "./style/normalize.css";
-import ErrorPage from "./components/errorPage/errorPage";
-import Spinner from "./components/spinner/spinner";
+import ErrorPage from "./components/errorPage/ErrorPage";
+import Spinner from "./components/spinner/Spinner";
 import {Provider} from "react-redux";
 import store, {persistor} from "./components/app/store";
 import {PersistGate} from "redux-persist/integration/react";
 
-const MainRootLazy = React.lazy(() => import("./components/routes/main"));
+const MainRootLazy = React.lazy(() => import("./components/routes/Main"));
 
 const router = createBrowserRouter([
     {

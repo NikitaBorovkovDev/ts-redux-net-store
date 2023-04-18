@@ -1,4 +1,4 @@
-import ProductSlider from "../productSlider/productSlider";
+import ProductSlider from "../productSlider/ProductSlider";
 import "./newArrivals.scss";
 
 const NewArrivals = () => {

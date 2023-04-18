@@ -1,6 +1,5 @@
 import {configureStore, combineReducers} from "@reduxjs/toolkit";
 import productReducer from "./productSlice";
-
 import {
     persistStore,
     persistReducer,
@@ -12,16 +11,20 @@ import {
     REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import cartSlice from "./cartSlice";
 
-const rootReducer = combineReducers({products: productReducer});
+const rootReducers = combineReducers({
+    products: productReducer,
+    cart: cartSlice,
+});
 
 const persistConfig = {
     key: "root",
     storage,
-    // blacklist: ["products"],
+    blacklist: ["products"],
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducers);
 
 const store = configureStore({
     reducer: persistedReducer,

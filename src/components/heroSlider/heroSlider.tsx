@@ -1,19 +1,9 @@
-import ButtonOutline from "../buttonOutline/buttonOutline";
-import ButtonSolid from "../buttonSolid/buttonSolid";
-import findBackgroundColor from "../../services/findBackgroundColor";
-
-import clsx from "clsx";
-
-import chroma from "chroma-js";
-
 import Swiper, {Navigation, Pagination} from "swiper";
-
 import "swiper/css";
-
 import "./heroSlider.scss";
 import {useEffect, useState, useRef} from "react";
-import Spinner from "../spinner/spinner";
-import {URL_HERO_SLIDER_CONTENT} from "../../usedUrls";
+import Spinner from "../spinner/Spinner";
+import RenderSlides from "./RenderSlides";
 
 const HeroSlider = () => {
     const swiperRef = useRef<HTMLDivElement>(null);
@@ -40,41 +30,41 @@ const HeroSlider = () => {
             });
     };
 
-    useEffect(() => {
-        const paginationChangeColor = () => {
-            let whiteActiveSlide = swiperRef?.current?.querySelector(
-                ".swiper-slide-active .swiper-white-text"
-            );
-            let blackActiveSlide = swiperRef?.current?.querySelector(
-                ".swiper-slide-active .swiper-black-text"
-            );
+    const changePaginationColor = () => {
+        let whiteActiveSlide = swiperRef?.current?.querySelector(
+            ".swiper-slide-active .swiper-white-text"
+        );
+        let blackActiveSlide = swiperRef?.current?.querySelector(
+            ".swiper-slide-active .swiper-black-text"
+        );
+        if (
+            paginationRef?.current &&
+            swiperRef?.current &&
+            (whiteActiveSlide || blackActiveSlide)
+        ) {
             if (
-                paginationRef?.current &&
-                swiperRef?.current &&
-                (whiteActiveSlide || blackActiveSlide)
+                swiperRef.current.querySelector(
+                    ".swiper-slide-active .swiper-white-text"
+                )
             ) {
-                if (
-                    swiperRef.current.querySelector(
-                        ".swiper-slide-active .swiper-white-text"
-                    )
-                ) {
-                    let paginationColor = "white";
-                    setPaginationColor(paginationColor);
-                } else {
-                    let paginationColor = "black";
-                    setPaginationColor(paginationColor);
-                }
+                let paginationColor = "white";
+                setPaginationColor(paginationColor);
+            } else {
+                let paginationColor = "black";
+                setPaginationColor(paginationColor);
             }
-        };
+        }
+    };
 
+    useEffect(() => {
         // eslint-disable-next-line
         const swiper = new Swiper(".hero-slider .swiper", {
             modules: [Navigation, Pagination],
             observer: true,
             simulateTouch: false,
             on: {
-                slideChangeTransitionStart: paginationChangeColor,
-                observerUpdate: paginationChangeColor,
+                slideChangeTransitionStart: changePaginationColor,
+                observerUpdate: changePaginationColor,
             },
             pagination: {
                 el: ".hero-slider .swiper-pagination",
@@ -95,10 +85,13 @@ const HeroSlider = () => {
                 prevEl: ".hero-slider .swiper-button-prev",
             },
         });
-        renderSlides().then((res) => {
+        RenderSlides().then((res) => {
             setSlides(res);
             setColorAnalysisInProgress(false);
         });
+        return function disableSlider() {
+            swiper.destroy();
+        };
     }, []);
 
     const spinner = colorAnalysisInProgress ? (
@@ -134,88 +127,3 @@ const HeroSlider = () => {
 };
 
 export default HeroSlider;
-
-const renderSlides = async () => {
-    interface ISliderContent {
-        subheading?: string;
-        heading?: string;
-        background?: {
-            image?: string;
-            color?: string;
-        };
-    }
-
-    const fetchingData = await fetch(URL_HERO_SLIDER_CONTENT);
-    const sliderContent: ISliderContent[] = await fetchingData.json();
-    const slidesArr = await Promise.all(
-        sliderContent.map(async (slide, index) => {
-            if (Object.keys(slide).length === 0 || !slide) {
-                return null;
-            }
-            let bgColor = "";
-            let backgroundImage = "";
-            if (slide.background?.image) {
-                try {
-                    bgColor = await findBackgroundColor(slide.background.image);
-                    backgroundImage = slide.background.image;
-                } catch (e) {
-                    if (slide.background?.color) {
-                        bgColor = slide.background.color;
-                    } else {
-                        bgColor = "white";
-                    }
-                }
-            } else if (slide.background?.color) {
-                bgColor = slide.background.color;
-            } else {
-                bgColor = "white";
-            }
-            let bgLuminance = chroma(bgColor).luminance();
-            let fontColor = bgLuminance > 0.5 ? "black" : "white";
-            let textColorClass =
-                fontColor === "black"
-                    ? "swiper-black-text"
-                    : "swiper-white-text";
-            let buttonColor = fontColor === "black" ? "" : "btn__lightGreen";
-
-            let background = backgroundImage
-                ? `url("${backgroundImage}")`
-                : bgColor;
-            return (
-                <div
-                    className="swiper-slide"
-                    key={index}
-                    style={{
-                        background: background,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-                    }}>
-                    <div className="container hero-slider__slide-container">
-                        <div
-                            className={clsx(
-                                "hero-slider__slide-subheading",
-                                textColorClass
-                            )}>
-                            {slide.subheading}
-                        </div>
-                        <h2
-                            className={clsx(
-                                "display-1 hero-slider__slide-heading",
-                                textColorClass
-                            )}>
-                            {slide.heading}
-                        </h2>
-                        <div className="hero-slider__buttons">
-                            <ButtonOutline addedClasses={buttonColor}>
-                                Shop sale
-                            </ButtonOutline>
-                            <ButtonSolid>Shop the menswear</ButtonSolid>
-                        </div>
-                    </div>
-                </div>
-            );
-        })
-    );
-    return slidesArr;
-};

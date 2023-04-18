@@ -1,7 +1,7 @@
 export default function addProductToLocalStorage(
     key: string,
     productId: string | number,
-    productProps: {[key: string]: string | number}
+    selectedProductParams?: {[key: string]: string | number}
 ) {
     let localStorageData = localStorage.getItem(key);
     let newLocalStorageData: any = [];
@@ -18,13 +18,13 @@ export default function addProductToLocalStorage(
                 (item: any) => item.id !== thisProductInLocalStorageData.id
             );
         } else {
-            newLocalStorageData.push({id: productId, ...productProps});
+            newLocalStorageData.push({id: productId, selectedProductParams});
         }
     } else {
         newLocalStorageData = [
             {
                 id: productId,
-                ...productProps,
+                selectedProductParams,
             },
         ];
     }

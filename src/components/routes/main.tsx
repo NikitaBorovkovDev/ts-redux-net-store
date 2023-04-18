@@ -1,7 +1,7 @@
-import Banners from "../banners/banners";
-import HeroSlider from "../heroSlider/heroSlider";
-import NewArrivals from "../newArrivals/newArrivals";
-import TopCategories from "../topCategories/topCategories";
+import Banners from "../banners/Banners";
+import HeroSlider from "../heroSlider/HeroSlider";
+import NewArrivals from "../newArrivals/NewArrivals";
+import TopCategories from "../topCategories/TopCategories";
 
 const MainRoot = () => {
     return (

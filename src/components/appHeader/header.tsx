@@ -1,7 +1,7 @@
-import TopBar from "../topBar/topBar";
-import Navbar from "../navbar/navBar";
+import TopBar from "../topBar/TopBar";
+import Navbar from "../navbar/NavBar";
 import "./header.scss";
-import SpecialOffers from "../specialOffers/specialOffers";
+import SpecialOffers from "../specialOffers/SpecialOffers";
 
 const Header = () => {
     return (

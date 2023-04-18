@@ -1,6 +1,6 @@
-import ContactPhone from "../contactPhone/contactPhone";
-import LangChange from "../lang-change/lang-change";
-import Login from "../login/login";
+import ContactPhone from "../contactPhone/ContactPhone";
+import LangChange from "../lang-change/Lang-change";
+import Login from "../login/Login";
 
 import "./topBar.scss";
 

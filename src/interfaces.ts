@@ -9,7 +9,17 @@ export interface IProduct {
     basePrice: string;
     currentPrice: string;
     discount: string;
-    size: string;
-    color: string;
+    params?: IProductParams;
     rating: string;
+}
+
+export interface IProductParams {
+    color: {paramsName: "color"; value: string[]};
+    [key: string]: {paramsName: string; value: string[]};
+}
+
+export interface IStorageProduct {
+    productId: string;
+    id: string;
+    selectedProductParams?: {[key: string]: string};
 }

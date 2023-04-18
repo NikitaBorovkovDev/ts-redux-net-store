@@ -1,41 +1,18 @@
 import {useEffect, useState} from "react";
 import Swiper, {Pagination} from "swiper";
-import fetchProducts, {ProductFilter} from "../../services/fetchProducts";
-import ProductCard from "../productCard/productCard";
-import {URL_PRODUCTS} from "../../usedUrls";
+import sortProducts, {ProductFilter} from "../../services/sortProducts";
+import ProductCard from "../productCard/ProductCard";
 
 import "swiper/css";
 import "./productSlider.scss";
-import {CardType} from "../productCard/productCard";
+import {CardType} from "../productCard/ProductCard";
+import {selectProductsStatus, selectProductsValue} from "../app/productSlice";
+import {useAppSelector} from "../../hooks/reduxHooks";
 
 const ProductSlider = () => {
     const [slides, setSlides] = useState<JSX.Element[] | null>(null);
-    // const lazyImage = () => (
-    //     <LazyLoadImage
-    //         alt={image.alt}
-    //         height={image.height}
-    //         src={image.src} // use normal <img> attributes as props
-    //         width={image.width} />
-    // )
-
-    const loadingProductSlide = async () => {
-        let productsData = await fetchProducts(
-            URL_PRODUCTS,
-            36,
-            ProductFilter.ALL
-        );
-        if (!productsData) {
-            throw new Error("fetch error");
-        }
-        let products = productsData.map((product, index) => {
-            return (
-                <div className="swiper-slide" key={index}>
-                    {ProductCard(product, CardType.SMALL)}
-                </div>
-            );
-        });
-        setSlides(products);
-    };
+    const status = useAppSelector(selectProductsStatus);
+    const products = useAppSelector(selectProductsValue);
 
     useEffect(() => {
         // eslint-disable-next-line
@@ -50,8 +27,27 @@ const ProductSlider = () => {
                 clickable: true,
             },
         });
-        loadingProductSlide();
     }, []);
+
+    useEffect(() => {
+        if (status === "fulfilled") {
+            let productsData = sortProducts(products, 36, ProductFilter.ALL);
+            if (!productsData) {
+                throw new Error("fetch error");
+            }
+            let productsSlides = productsData.map((product, index) => {
+                return (
+                    <div className="swiper-slide" key={index}>
+                        <ProductCard
+                            product={product}
+                            cardType={CardType.SMALL}
+                        />
+                    </div>
+                );
+            });
+            setSlides(productsSlides);
+        }
+    }, [status, products]);
 
     let content = slides ? slides : null;
     return (

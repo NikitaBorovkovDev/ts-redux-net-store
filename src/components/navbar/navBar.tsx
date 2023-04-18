@@ -2,11 +2,11 @@ import {Link} from "react-router-dom";
 
 import "./navbar.scss";
 import Logo from "../../img/logo.svg";
-import MenuList from "../menuList/menuList";
-import SearchField from "../searchField/searchField";
-import Divider from "../divider/divider";
-import Wishlist from "../wishlist/wishlist";
-import Cart from "../cart/cart";
+import MenuList from "../menuList/MenuList";
+import SearchField from "../searchField/SearchField";
+import Divider from "../divider/Divider";
+import Wishlist from "../wishlist/Wishlist";
+import Cart from "../cart/Cart";
 
 const Navbar = () => {
     return (
