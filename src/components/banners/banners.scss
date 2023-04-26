@@ -18,6 +18,15 @@
         margin-top: 12px;
         margin-bottom: 40px;
     }
+    &__sub-title123123 {
+        font-family: "Lato";
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $main-color-grey-900;
+    }
     &:nth-child(1) {
         background: url(../../img/bannerImg1.jpg) no-repeat center;
         background-size: cover;

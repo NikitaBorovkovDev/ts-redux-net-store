@@ -67,7 +67,9 @@ const SubscribeBanner = (props: {content: ISubscribeBanner}): JSX.Element => {
     return (
         <div className="banners__banner banner">
             <div>
-                <h3 className="banner__sub-title">{subTitle}</h3>
+                <h3 className="banner__sub-title123123">
+                    <span>{subTitle}</span>
+                </h3>
                 <h2 className="banner__title heading-2">{title}</h2>
                 <form
                     autoComplete="on"
