@@ -6,16 +6,18 @@ import clsx from "clsx";
 import chroma from "chroma-js";
 import axios from "axios";
 
-const RenderSlides = async () => {
-    interface ISliderContent {
-        subheading?: string;
-        heading?: string;
-        background?: {
-            image?: string;
-            color?: string;
-        };
-    }
+interface ISliderContent {
+    subheading?: string;
+    heading?: string;
+    background?: {
+        image?: string;
+        color?: string;
+    };
+    outlineButton?: string;
+    solidButton?: string;
+}
 
+const RenderSlides = async () => {
     const fetchingData = await axios(URL_HERO_SLIDER_CONTENT);
     const sliderContent: ISliderContent[] = await fetchingData.data;
     const slidesArr = await Promise.all(
@@ -78,10 +80,14 @@ const RenderSlides = async () => {
                             {slide.heading}
                         </h2>
                         <div className="hero-slider__buttons">
-                            <ButtonOutline addedClasses={buttonColor}>
-                                Shop sale
-                            </ButtonOutline>
-                            <ButtonSolid>Shop the menswear</ButtonSolid>
+                            {slide.outlineButton ? (
+                                <ButtonOutline addedClasses={buttonColor}>
+                                    {slide.outlineButton}
+                                </ButtonOutline>
+                            ) : null}
+                            {slide.solidButton ? (
+                                <ButtonSolid>{slide.solidButton}</ButtonSolid>
+                            ) : null}
                         </div>
                     </div>
                 </div>

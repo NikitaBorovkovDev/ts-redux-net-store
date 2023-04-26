@@ -1,4 +1,4 @@
-import React, {Suspense} from "react";
+import React, {StrictMode, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/app/App";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
@@ -9,6 +9,7 @@ import Spinner from "./components/spinner/Spinner";
 import {Provider} from "react-redux";
 import store, {persistor} from "./components/app/store";
 import {PersistGate} from "redux-persist/integration/react";
+import SinglePage from "./components/routes/singlePage/SinglePage";
 
 const MainRootLazy = React.lazy(() => import("./components/routes/Main"));
 
@@ -17,11 +18,13 @@ const router = createBrowserRouter([
         path: "/",
         errorElement: <ErrorPage />,
         element: (
-            <Provider store={store}>
-                <PersistGate loading={null} persistor={persistor}>
-                    <App />
-                </PersistGate>
-            </Provider>
+            <StrictMode>
+                <Provider store={store}>
+                    <PersistGate loading={null} persistor={persistor}>
+                        <App />
+                    </PersistGate>
+                </Provider>
+            </StrictMode>
         ),
         children: [
             {
@@ -31,6 +34,14 @@ const router = createBrowserRouter([
                         <MainRootLazy />
                     </Suspense>
                 ),
+            },
+            {
+                path: "/:id",
+                element: <SinglePage />,
+            },
+            {
+                path: "/shop/404-not-found",
+                element: <ErrorPage />,
             },
         ],
     },

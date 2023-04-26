@@ -98,7 +98,6 @@ const Banners = () => {
                 deadlines.push(banner.deadline);
             }
         });
-        console.log("deadlines=", deadlines);
 
         let timerId = setInterval(() => {
             const time = deadlines.map((deadline) => {

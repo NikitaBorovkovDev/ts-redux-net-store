@@ -32,9 +32,7 @@ const ProductSlider = () => {
     useEffect(() => {
         if (status === "fulfilled") {
             let productsData = sortProducts(products, 36, ProductFilter.ALL);
-            if (!productsData) {
-                throw new Error("fetch error");
-            }
+
             let productsSlides = productsData.map((product, index) => {
                 return (
                     <div className="swiper-slide" key={index}>

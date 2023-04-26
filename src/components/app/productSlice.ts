@@ -6,12 +6,10 @@ import axios from "axios";
 
 export const fetchProducts = createAsyncThunk(
     "products/setProducts",
-    async function (_, {rejectWithValue, dispatch, getState}) {
+    async function (_, {rejectWithValue}) {
         try {
             const res = await axios.get(URL_PRODUCTS);
-            console.log(res);
             if (!(res.status >= 200 && res.status < 300)) {
-                console.log(res);
                 throw new Error(`${res.status}`);
             }
 
