@@ -5,7 +5,9 @@ import {
     selectLocalStorageProductsValue,
 } from "../app/cartSlice";
 import {selectProductsStatus, selectProductsValue} from "../app/productSlice";
+import InputNumber from "rc-input-number";
 import "./cartSideBar.scss";
+import "./inputStyle.scss";
 
 const CartSideBar = (props: {
     onClose: () => void;
@@ -21,6 +23,8 @@ const CartSideBar = (props: {
     const [cartElements, setCartElements] = useState<(JSX.Element | null)[]>(
         []
     );
+    const upHandler = <div className="input-number-handler-inner"></div>;
+    const downHandler = <div className="input-number-handler-inner"></div>;
 
     useEffect(() => {
         if (status === "fulfilled") {
@@ -48,10 +52,10 @@ const CartSideBar = (props: {
                         if (selectedProductParam) {
                             return (
                                 <div key={index}>
-                                    <span className="cart-side-bar__prop-key extraextrasmall-regular">
+                                    <span className="cart-side-bar__prop-key extrasmall-regular">
                                         {key}:
-                                        <span className="cart-side-bar__prop-value extraextrasmall-regular">
-                                            {selectedProductParam[key]}
+                                        <span className="cart-side-bar__prop-value extrasmall-regular">
+                                            {` ${selectedProductParam[key]}`}
                                         </span>
                                     </span>
                                 </div>
@@ -76,6 +80,17 @@ const CartSideBar = (props: {
                                     {product.name}
                                 </h5>
                                 {paramsBlock}
+                                <div>
+                                    <InputNumber
+                                        prefixCls="input-number"
+                                        style={{width: 100}}
+                                        min={-99}
+                                        max={99}
+                                        defaultValue={33}
+                                        upHandler={upHandler}
+                                        downHandler={downHandler}
+                                    />
+                                </div>
                             </div>
                             <button className="cart-side-bar__remove">
                                 &times;

@@ -75,10 +75,12 @@
 
     &__prop-key {
         color: $main-color-grey-700;
+        text-transform: capitalize;
     }
 
     &__prop-value {
         color: $main-color-grey-800;
+        text-transform: none;
     }
 
     &__remove {

@@ -1,0 +1,33 @@
+.input-number {
+    border: 2px solid #d7dadd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    &-handler {
+    }
+    &-handler-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        width: 16px;
+        height: 16px;
+        margin-right: 12px;
+    }
+    &-handler-inner {
+        background: #000;
+        width: 9px;
+        height: 6px;
+    }
+    &-input-wrap {
+        order: -1;
+        font-family: "Lato";
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        padding: 9px 0 9px 12px;
+        display: flex;
+    }
+    &-input {
+        width: 100%;
+    }
+}
