@@ -4,7 +4,7 @@ import {useAppSelector} from "../../hooks/reduxHooks";
 import {selectProductsValue} from "../app/productSlice";
 import "./cart.scss";
 import {selectLocalStorageProductsValue} from "../app/cartSlice";
-import CartSideBar from "../cartSideBar/cartSideBar";
+import CartSideBar from "../cartSideBar/CartSideBar";
 
 const Cart = () => {
     const cartRef = useRef<HTMLSpanElement>(null);
