@@ -1,12 +1,12 @@
-import {redirect, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import "./singlePage.scss";
-import {useAppSelector} from "../../../hooks/reduxHooks";
+import {useAppSelector} from "hooks/reduxHooks";
 import {
     selectProductsStatus,
     selectProductsValue,
-} from "../../app/productSlice";
+} from "components/app/productSlice";
 import {useEffect, useState} from "react";
-import {IProduct} from "../../../interfaces";
+import {IProduct} from "interfaces";
 
 const SinglePage = () => {
     const [content, setContent] = useState<IProduct | null>(null);
@@ -28,17 +28,28 @@ const SinglePage = () => {
                 setContent(currentProduct);
             }
         }
-    }, [status]);
+    }, [status, id]);
     let renderContent = content ? (
-        <>
-            <div>
-                <h1>{content.name}</h1>
-                <span>{`Art. No. ${content.id}`}</span>
+        <div className="product-page container">
+            <div className="product-page__title-container">
+                <h2 className="product-page__title">{content.name}</h2>
+                <span className="product-page__art-text">
+                    {"Art. No."}
+                    <span className="product-page__art-number">
+                        {content.id}
+                    </span>
+                </span>
             </div>
-            <div>
-                <img src={content.imageAndVideo[0].url} alt="image" />
+
+            <div className="product-page__desc">
+                <img
+                    width={600}
+                    height={600}
+                    src={content.imageAndVideo[0].url}
+                    alt="image"
+                />
             </div>
-        </>
+        </div>
     ) : null;
     return <div>{renderContent}</div>;
 };

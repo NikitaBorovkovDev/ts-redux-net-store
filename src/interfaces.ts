@@ -9,12 +9,23 @@ export interface IProduct {
     basePrice: string;
     currentPrice: string;
     discount: string;
-    params?: IProductParams;
+    params: IProductParams;
     rating: string;
 }
 
+export interface IChange {
+    id: string;
+    quantity: number;
+}
+export enum CardType {
+    SMALL = "small",
+    LARGE = "large",
+}
+export enum BannerType {
+    Default,
+    SubscribeForm,
+}
 export interface IProductParams {
-    color: {paramsName: "color"; value: string[]};
     [key: string]: {paramsName: string; value: string[]};
 }
 
@@ -22,4 +33,5 @@ export interface IStorageProduct {
     productId: string;
     id: string;
     selectedProductParams?: {[key: string]: string};
+    quantity: number;
 }

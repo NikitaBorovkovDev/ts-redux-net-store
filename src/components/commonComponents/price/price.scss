@@ -1,0 +1,25 @@
+.price-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &__current-large {
+        font-size: 24px !important;
+    }
+    &__current-small {
+        font-size: 20px;
+    }
+    &__old {
+        margin-left: 12px;
+        font-weight: 400;
+        line-height: 150%;
+        text-decoration-line: line-through;
+        color: #787a80;
+    }
+    &__old-small {
+        font-size: 16px;
+    }
+    &__old-large {
+        font-size: 18px;
+    }
+}

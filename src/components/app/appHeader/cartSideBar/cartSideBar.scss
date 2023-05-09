@@ -1,0 +1,115 @@
+@import "/src/style/variables.scss";
+
+.cart-side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    &__background {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+    &__wrapper {
+        position: absolute;
+        background: #fff;
+        width: 352px;
+        right: -105%;
+        top: 0;
+        color: #000;
+        height: 100vh;
+        border-radius: 4px;
+        transition: right 0.2s;
+        &.active {
+            right: 0;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            background: #e5e8ed;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &__close {
+        background: url("/img/cross.svg") no-repeat center/16px;
+        position: relative;
+        width: 24px;
+        height: 24px;
+    }
+
+    &__cart-list {
+        padding: 16px 24px;
+    }
+
+    &__cart-item {
+        display: flex;
+    }
+
+    &__image {
+        width: 80px;
+        height: 80px;
+        border-radius: 4px;
+    }
+
+    &__desc {
+        display: flex;
+        margin-left: 16px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__text-container {
+        margin-right: 24px;
+    }
+
+    &__name {
+    }
+
+    &__info {
+        width: 130%;
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+    }
+    &__price {
+        margin-left: 16px;
+    }
+
+    &__prop-key {
+        color: $main-color-grey-700;
+        text-transform: capitalize;
+    }
+
+    &__prop-value {
+        color: $main-color-grey-800;
+        text-transform: none;
+    }
+
+    &__remove {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        background: url("/img/delete-icon.png") no-repeat center/16px;
+    }
+
+    &__footer {
+    }
+}
+.heading-5 {
+}
+.base-regular {
+}

@@ -1,5 +1,5 @@
 import generateUniqueRandomNumbers from "./generateUniqueRandomNumbers";
-import {IProduct} from "../interfaces";
+import {IProduct} from "interfaces";
 
 export enum ProductFilter {
     ALL = "all",

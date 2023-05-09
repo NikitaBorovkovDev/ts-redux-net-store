@@ -1,0 +1,31 @@
+@import "/src/style/variables.scss";
+
+.product-page {
+    font-family: "Lato";
+    &__title-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 85px;
+        align-items: center;
+    }
+    &__title {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 46px;
+        line-height: 130%;
+    }
+    &__art-text {
+        color: $main-color-grey-700;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 160%;
+    }
+    &__art-number {
+        margin-left: 4px;
+        font-weight: 400;
+    }
+    &__desc {
+        display: flex;
+        gap: 105px;
+    }
+}

@@ -1,0 +1,10 @@
+@import "/src/style/variables.scss";
+@import "/src/style/button.scss";
+
+.btn-solid {
+    background-color: $main-color-primary;
+}
+
+.btn__text-solid {
+    color: #ffffff;
+}

@@ -1,5 +1,5 @@
 import {PayloadAction, createSlice} from "@reduxjs/toolkit";
-import {IStorageProduct} from "../../interfaces";
+import {IChange, IStorageProduct} from "interfaces";
 import {RootState} from "./store";
 
 interface InitialState {
@@ -19,6 +19,16 @@ export const cartSlice = createSlice({
             action: PayloadAction<IStorageProduct>
         ) => {
             state.value.push(action.payload);
+        },
+        changeQuantity: (state, action: PayloadAction<IChange>) => {
+            state.value = state.value.map((item) => {
+                if (item.id === action.payload.id) {
+                    item.quantity = action.payload.quantity;
+                    return item;
+                } else {
+                    return item;
+                }
+            });
         },
         removeProductFromLocalStorage: (
             state,
@@ -69,6 +79,9 @@ export const cartSlice = createSlice({
 
 export const selectLocalStorageProductsValue = (state: RootState) =>
     state.cart.value;
-export const {addProductToLocalStorage, removeProductFromLocalStorage} =
-    cartSlice.actions;
+export const {
+    addProductToLocalStorage,
+    removeProductFromLocalStorage,
+    changeQuantity,
+} = cartSlice.actions;
 export default cartSlice.reducer;

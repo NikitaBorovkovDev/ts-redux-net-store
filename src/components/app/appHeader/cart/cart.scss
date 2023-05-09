@@ -1,0 +1,18 @@
+@import "/src/style/variables.scss";
+.cart {
+    cursor: pointer;
+    display: flex;
+    padding-left: 30px;
+    color: #fff;
+    background: url("/img/Cart.png") no-repeat left center/20px;
+}
+
+.cart__text {
+    display: inline-block;
+    background-color: $main-color-success;
+    padding: 0px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 900;
+}
