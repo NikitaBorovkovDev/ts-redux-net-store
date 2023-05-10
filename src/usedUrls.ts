@@ -1,4 +1,4 @@
 export const URL_HERO_SLIDER_CONTENT =
-    "https://my-json-server.typicode.com/nickfluffybr/ts-redux-net-store/heroSliderContent";
+    "https://raw.githubusercontent.com/nickfluffybr/ts-redux-net-store/main/heroSliderContentDatabase.json";
 export const URL_PRODUCTS =
-    "https://my-json-server.typicode.com/nickfluffybr/ts-redux-net-store/products";
+    "https://raw.githubusercontent.com/nickfluffybr/ts-redux-net-store/main/productsDatabase.json";
