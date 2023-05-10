@@ -45,22 +45,19 @@ const Banners = () => {
         },
         {
             type: BannerType.Default,
-            subTitle: "Deal of the week",
-            title: "Stay Warm With Our New Sweaters",
+            subTitle: "New collection",
+            title: "Shoes & Bags autumn / winter 2020",
             button: (
                 <ButtonOutline>
-                    <>
-                        See offers
-                        <span className="icon-arrow icon-arrowRight"></span>
-                    </>
+                    <>See offers</>
                 </ButtonOutline>
             ),
             deadline: 1688364200000,
         },
         {
             type: BannerType.SubscribeForm,
-            subTitle: "Deal of the week",
-            title: "Stay Warm With Our New Sweaters",
+            subTitle: "For All new Email Subscribers",
+            title: "Get 5% Off & Free Delivery",
             emailSubscribe: {
                 inputPlaceholderText: "Your working email",
                 buttonText: "Subscribe",

@@ -22,7 +22,7 @@ export const cartSlice = createSlice({
         },
         changeQuantity: (state, action: PayloadAction<IChange>) => {
             state.value = state.value.map((item) => {
-                if (item.id === action.payload.id) {
+                if (item.productId === action.payload.productId) {
                     item.quantity = action.payload.quantity;
                     return item;
                 } else {

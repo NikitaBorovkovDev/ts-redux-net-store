@@ -1,0 +1,43 @@
+.banners {
+    &__banner {
+    }
+}
+.banner {
+    &__sub-title {
+    }
+
+    &__title {
+    }
+
+    &__form {
+        display: flex;
+    }
+
+    &__input {
+        line-height: 100%;
+    }
+
+    &__button {
+    }
+}
+.subscribe-banner {
+    background: url("/img/subscribe-banner.svg") no-repeat bottom right, #e5e8ed;
+    &__form {
+        width: 360px;
+        & > button {
+            border-radius: 0 4px 4px 0;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        border: 1px solid #d7dadd;
+        border-radius: 4px 0 0 4px;
+    }
+    &__input-text {
+        margin-top: 20px;
+        width: 360px;
+    }
+}

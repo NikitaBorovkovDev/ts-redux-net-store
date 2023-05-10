@@ -8,10 +8,14 @@
     padding: 0 40px;
     border-radius: 4px;
     cursor: pointer;
+    min-height: 52px;
 }
 .btn__text {
-    line-height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Lato";
     font-size: 16px;
+    line-height: 150%;
     letter-spacing: 0.5px;
 }

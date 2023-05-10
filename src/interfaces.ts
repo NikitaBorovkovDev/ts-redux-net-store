@@ -14,7 +14,7 @@ export interface IProduct {
 }
 
 export interface IChange {
-    id: string;
+    productId: string;
     quantity: number;
 }
 export enum CardType {

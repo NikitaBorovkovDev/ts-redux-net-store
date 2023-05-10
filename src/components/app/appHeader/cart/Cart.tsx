@@ -15,6 +15,17 @@ const Cart = () => {
         setLength(productsIsStorage.length);
     }, [productsIsStorage]);
 
+    useEffect(() => {
+        if (showModalCart) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "visible";
+        }
+        return () => {
+            document.body.style.overflow = "visible";
+        };
+    }, [showModalCart]);
+
     return (
         <>
             <span

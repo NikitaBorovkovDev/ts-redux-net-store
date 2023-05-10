@@ -1,6 +1,8 @@
 import {useState} from "react";
 import axios from "axios";
 import "../banners.scss";
+import "./subscribeBanner.scss";
+import ButtonSolid from "components/commonComponents/buttonSolid/ButtonSolid";
 
 interface ISubscribeBanner {
     subTitle: string;
@@ -65,9 +67,9 @@ const SubscribeBanner = (props: {content: ISubscribeBanner}): JSX.Element => {
     };
 
     return (
-        <div className="banners__banner banner">
+        <div className="banners__banner banner subscribe-banner">
             <div>
-                <h3 className="banner__sub-title123123">
+                <h3 className="banner__sub-title">
                     <span>{subTitle}</span>
                 </h3>
                 <h2 className="banner__title heading-2">{title}</h2>
@@ -76,19 +78,19 @@ const SubscribeBanner = (props: {content: ISubscribeBanner}): JSX.Element => {
                     noValidate
                     action="#"
                     onSubmit={handleSubmit}
-                    className="banner__form">
+                    className="banner__form subscribe-banner__form">
                     <input
-                        className="banner__input"
+                        className="banner__input subscribe-banner__input"
                         name="email"
                         placeholder={inputPlaceholderText}
                         value={inputValue}
                         onChange={handleChange}
                     />
-                    <button className="banner__button" type="submit">
-                        {buttonText}
-                    </button>
-                    <p className="banner__input">{text}</p>
+                    <ButtonSolid>{buttonText}</ButtonSolid>
                 </form>
+                <p className="banner__input-text subscribe-banner__input-text">
+                    {text}
+                </p>
             </div>
         </div>
     );

@@ -14,6 +14,7 @@ import "./cartSideBar.scss";
 import "./inputStyle.scss";
 import Price from "components/commonComponents/price/Price";
 import {CardType} from "interfaces";
+import ButtonSolid from "components/commonComponents/buttonSolid/ButtonSolid";
 
 const CartSideBar = (props: {
     onClose: () => void;
@@ -30,6 +31,7 @@ const CartSideBar = (props: {
     const [cartElements, setCartElements] = useState<(JSX.Element | null)[]>(
         []
     );
+    const [total, setTotal] = useState(0);
     const upHandler = (
         <div className="input-number-handler-inner input-number-handler-inner-up"></div>
     );
@@ -39,6 +41,8 @@ const CartSideBar = (props: {
 
     useEffect(() => {
         if (status === "fulfilled") {
+            let priceTotal = 0;
+
             let cartElements = cartData.map((cartProduct) => {
                 const product = productsData.find(
                     (item) => item.id === cartProduct.id
@@ -49,6 +53,8 @@ const CartSideBar = (props: {
                     );
                     return null;
                 }
+
+                priceTotal += +product.currentPrice;
 
                 const cartKeys = cartProduct.selectedProductParams
                     ? Object.keys(cartProduct.selectedProductParams)
@@ -100,7 +106,8 @@ const CartSideBar = (props: {
                                         onChange={(e) =>
                                             dispatch(
                                                 changeQuantity({
-                                                    id: cartProduct.id,
+                                                    productId:
+                                                        cartProduct.productId,
                                                     quantity: e ? e : 0,
                                                 })
                                             )
@@ -135,6 +142,7 @@ const CartSideBar = (props: {
                 );
             });
             setCartElements(cartElements);
+            setTotal(priceTotal);
         }
     }, [status, cartData]);
 
@@ -179,8 +187,18 @@ const CartSideBar = (props: {
                 </div>
                 <ul className="cart-side-bar__cart-list">{cartElements}</ul>
                 <div className="cart-side-bar__footer">
-                    <span className="base-regular"></span>
-                    <span className="heading-5"></span>
+                    <div className="cart-side-bar__total-container">
+                        <span className="base-regular cart-side-bar__subtotal">
+                            Subtotal:
+                        </span>
+                        <span className="heading-5">${total.toFixed(2)}</span>
+                    </div>
+                    <ButtonSolid>
+                        <span className="cart-side-bar__button-content">
+                            <span className="cart-side-bar__button-icon"></span>
+                            Checkout
+                        </span>
+                    </ButtonSolid>
                 </div>
             </div>
         </div>

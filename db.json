@@ -72,6 +72,10 @@
                 "size": {
                     "paramsName": "size",
                     "value": ["36", "37", "38", "39", "40"]
+                },
+                "color": {
+                    "paramsName": "color",
+                    "value": ["pink", "blue", "yellow"]
                 }
             },
             "rating": "4.13"
@@ -89,6 +93,10 @@
             "currentPrice": "31.00",
             "discount": "0",
             "params": {
+                "size": {
+                    "paramsName": "size",
+                    "value": ["36", "37", "38", "39", "40"]
+                },
                 "color": {
                     "paramsName": "color",
                     "value": ["pink", "blue", "yellow"]
@@ -111,7 +119,7 @@
             "params": {
                 "size": {
                     "paramsName": "size",
-                    "value": ["40"]
+                    "value": ["36", "37", "38", "39", "40"]
                 },
                 "color": {
                     "paramsName": "color",
@@ -139,7 +147,7 @@
                 },
                 "color": {
                     "paramsName": "color",
-                    "value": ["pink"]
+                    "value": ["pink", "blue", "yellow"]
                 }
             },
             "rating": "3.33"
@@ -157,9 +165,13 @@
             "currentPrice": "15.50",
             "discount": "-50",
             "params": {
+                "size": {
+                    "paramsName": "size",
+                    "value": ["36", "37", "38", "39", "40"]
+                },
                 "color": {
                     "paramsName": "color",
-                    "value": ["pink"]
+                    "value": ["pink", "blue", "yellow"]
                 }
             },
             "rating": "4.13"
@@ -179,7 +191,11 @@
             "params": {
                 "size": {
                     "paramsName": "size",
-                    "value": ["40"]
+                    "value": ["36", "37", "38", "39", "40"]
+                },
+                "color": {
+                    "paramsName": "color",
+                    "value": ["pink", "blue", "yellow"]
                 }
             },
             "rating": "4.13"
