@@ -76,7 +76,7 @@
     },
     {
         "id": "4",
-        "name": "Red dangle earrings",
+        "name": "Red dangle earrings. Lorem ipsum dolor sit amet",
         "type": "earrings",
         "imageAndVideo": [
             {
@@ -124,7 +124,7 @@
     },
     {
         "id": "6",
-        "name": "Chrono watch with blue {something need to cut}",
+        "name": "Chrono watch with blue. Lorem ipsum dolor sit amet",
         "type": "watch",
         "imageAndVideo": [
             {
@@ -172,7 +172,7 @@
     },
     {
         "id": "8",
-        "name": "Leather crossbody bag with {something need to cut}",
+        "name": "Leather crossbody bag with ipsum dolor sit amet",
         "type": "bag",
         "imageAndVideo": [
             {

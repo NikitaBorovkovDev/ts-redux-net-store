@@ -1,0 +1,39 @@
+.auth-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #00000060;
+        z-index: 1;
+    }
+    &__wrapper {
+        background: #fff;
+        width: 486px;
+        display: flex;
+        flex-direction: column;
+        color: #000;
+        height: 60vh;
+        border-radius: 4px;
+        transition: right 0.2s;
+        max-height: 100vh;
+        z-index: 2;
+    }
+    &__close {
+        margin: 24px 24px 4px auto;
+    }
+    &__sign-in-btns-container {
+    }
+}

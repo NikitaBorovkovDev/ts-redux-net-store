@@ -1,3 +1,4 @@
+import {memo} from "react";
 import "../banners.scss";
 
 interface ITimer {
@@ -7,7 +8,7 @@ interface ITimer {
     seconds: number;
 }
 
-const Timer = (props: {timeLeft: ITimer}): JSX.Element => {
+const Timer = memo((props: {timeLeft: ITimer}): JSX.Element => {
     const {days, hours, minutes, seconds} = props.timeLeft;
 
     return (
@@ -54,6 +55,6 @@ const Timer = (props: {timeLeft: ITimer}): JSX.Element => {
             </div>
         </div>
     );
-};
+});
 
 export default Timer;

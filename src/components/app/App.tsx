@@ -6,7 +6,6 @@ import {useAppDispatch} from "hooks/reduxHooks";
 
 const App = () => {
     const dispatch = useAppDispatch();
-
     useEffect(() => {
         dispatch(fetchProducts());
     }, []);

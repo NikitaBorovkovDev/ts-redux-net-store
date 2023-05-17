@@ -6,7 +6,8 @@ import {
     selectProductsValue,
 } from "components/app/productSlice";
 import {useEffect, useState} from "react";
-import {IProduct} from "interfaces";
+import {CardType, IProduct} from "interfaces";
+import ProductCard from "components/commonComponents/productCard/ProductCard";
 
 const SinglePage = () => {
     const [content, setContent] = useState<IProduct | null>(null);
@@ -21,7 +22,6 @@ const SinglePage = () => {
             const currentProduct = products.find(
                 (product) => product.id === id
             );
-            console.log(currentProduct);
             if (!currentProduct) {
                 navigate("/shop/404-not-found");
             } else {
@@ -42,12 +42,7 @@ const SinglePage = () => {
             </div>
 
             <div className="product-page__desc">
-                <img
-                    width={600}
-                    height={600}
-                    src={content.imageAndVideo[0].url}
-                    alt="image"
-                />
+                <ProductCard product={content} cardType={CardType.LARGE} />
             </div>
         </div>
     ) : null;

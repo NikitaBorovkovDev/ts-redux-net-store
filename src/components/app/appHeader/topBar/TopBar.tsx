@@ -1,6 +1,6 @@
 import ContactPhone from "../contactPhone/ContactPhone";
 import LangChange from "../lang-change/Lang-change";
-import Login from "../login/Login";
+import Auth from "../auth/Auth";
 
 import "./topBar.scss";
 
@@ -16,8 +16,8 @@ const TopBar = () => {
                     <a>Contacts</a>
                 </nav>
                 <div className="topBar__right-panel">
-                    <LangChange>Eng / $</LangChange>
-                    <Login>Log in / Register</Login>
+                    {/* <LangChange>Eng / $</LangChange> */}
+                    <Auth />
                 </div>
             </div>
         </div>

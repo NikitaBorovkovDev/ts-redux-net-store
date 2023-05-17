@@ -18,7 +18,7 @@ import ButtonSolid from "components/commonComponents/buttonSolid/ButtonSolid";
 
 const CartSideBar = (props: {
     onClose: () => void;
-    parentRef: React.RefObject<HTMLSpanElement>;
+    parentRef: React.RefObject<HTMLElement>;
 }) => {
     const bgRef = useRef<HTMLDivElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -54,7 +54,7 @@ const CartSideBar = (props: {
                     return null;
                 }
 
-                priceTotal += +product.currentPrice;
+                priceTotal += +product.currentPrice * cartProduct.quantity;
 
                 const cartKeys = cartProduct.selectedProductParams
                     ? Object.keys(cartProduct.selectedProductParams)
@@ -182,7 +182,15 @@ const CartSideBar = (props: {
                 <div className="cart-side-bar__header">
                     <h4 className="heading-5">Your cart ({cartData.length})</h4>
                     <button
-                        onClick={props.onClose}
+                        onClick={() => {
+                            if (wrapperRef.current)
+                                wrapperRef.current.style.right = "-105%";
+                            if (bgRef.current)
+                                bgRef.current.style.opacity = "0";
+                            setTimeout(() => {
+                                props.onClose();
+                            }, 200);
+                        }}
                         className="cart-side-bar__close"></button>
                 </div>
                 <ul className="cart-side-bar__cart-list">{cartElements}</ul>

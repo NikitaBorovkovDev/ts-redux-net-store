@@ -1,6 +1,6 @@
 import ButtonOutline from "components/commonComponents/buttonOutline/ButtonOutline";
 import "./banners.scss";
-import {useEffect, useState} from "react";
+import {memo, useEffect, useState} from "react";
 import Timer from "./bannersComponent/Timer";
 import Banner from "./bannersComponent/Banner";
 import SubscribeBanner from "./bannersComponent/SubscribeBanner";
@@ -19,8 +19,7 @@ export interface IContent {
     };
 }
 
-const Banners = () => {
-    // const [banners, setBanners] = useState<JSX.Element[]>([]);
+const Banners = memo(() => {
     const [timeLeft, setTimeLeft] = useState<
         {days: number; hours: number; minutes: number; seconds: number}[]
     >([]);
@@ -66,25 +65,24 @@ const Banners = () => {
         },
     ];
 
-    const getTimeDifference = (timeDifference: number) => {
-        let days =
-            timeDifference > 0
-                ? Math.floor(timeDifference / 1000 / 60 / 60 / 24)
-                : 0;
-        let hours =
-            timeDifference > 0
-                ? Math.floor(timeDifference / 1000 / 60 / 60) % 24
-                : 0;
-        let minutes =
-            timeDifference > 0
-                ? Math.floor(timeDifference / 1000 / 60) % 60
-                : 0;
-        let seconds =
-            timeDifference > 0 ? Math.floor(timeDifference / 1000) % 60 : 0;
-        return {days, hours, minutes, seconds};
-    };
-
     useEffect(() => {
+        const getTimeDifference = (timeDifference: number) => {
+            let days =
+                timeDifference > 0
+                    ? Math.floor(timeDifference / 1000 / 60 / 60 / 24)
+                    : 0;
+            let hours =
+                timeDifference > 0
+                    ? Math.floor(timeDifference / 1000 / 60 / 60) % 24
+                    : 0;
+            let minutes =
+                timeDifference > 0
+                    ? Math.floor(timeDifference / 1000 / 60) % 60
+                    : 0;
+            let seconds =
+                timeDifference > 0 ? Math.floor(timeDifference / 1000) % 60 : 0;
+            return {days, hours, minutes, seconds};
+        };
         const deadlines: number[] = [];
         content.forEach((banner) => {
             if (banner.deadline) {
@@ -102,42 +100,54 @@ const Banners = () => {
         return () => clearInterval(timerId);
     }, []);
 
-    const bannersRender = () => {
-        let timerIndex = 0;
-        return content.map((banner, index) => {
-            const {subTitle, title, button, deadline, emailSubscribe} = banner;
-            if (deadline) {
-                const component = (
-                    <Banner key={index} content={{subTitle, title, button}}>
-                        <Timer
-                            key={timerIndex}
-                            timeLeft={timeLeft[timerIndex]}
-                        />
-                    </Banner>
-                );
-                timerIndex = timerIndex + 1;
-                return component;
-            } else if (emailSubscribe) {
-                return (
-                    <SubscribeBanner
-                        key={index}
-                        content={{
-                            subTitle,
-                            title,
-                            emailSubscribe,
-                        }}></SubscribeBanner>
-                );
-            } else {
-                return (
-                    <Banner key={index} content={{subTitle, title, button}} />
-                );
-            }
-        });
-    };
+    let timerIndex = 0;
 
-    let bannersContent =
-        timeLeft.length === 0 ? <h1>loading</h1> : bannersRender();
-    return <section className="banners">{bannersContent}</section>;
-};
+    return (
+        <section className="banners">
+            {content.map((banner, index) => {
+                const {subTitle, title, button, deadline, emailSubscribe} =
+                    banner;
+                if (deadline) {
+                    const component = (
+                        <Banner key={index} content={{subTitle, title, button}}>
+                            <Timer
+                                key={timerIndex}
+                                timeLeft={
+                                    timeLeft[timerIndex]
+                                        ? timeLeft[timerIndex]
+                                        : {
+                                              days: 0,
+                                              hours: 0,
+                                              minutes: 0,
+                                              seconds: 0,
+                                          }
+                                }
+                            />
+                        </Banner>
+                    );
+                    timerIndex = timerIndex + 1;
+                    return component;
+                } else if (emailSubscribe) {
+                    return (
+                        <SubscribeBanner
+                            key={index}
+                            content={{
+                                subTitle,
+                                title,
+                                emailSubscribe,
+                            }}></SubscribeBanner>
+                    );
+                } else {
+                    return (
+                        <Banner
+                            key={index}
+                            content={{subTitle, title, button}}
+                        />
+                    );
+                }
+            })}
+        </section>
+    );
+});
 
 export default Banners;

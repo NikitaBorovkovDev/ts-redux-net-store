@@ -10,6 +10,8 @@ import {Provider} from "react-redux";
 import store, {persistor} from "./components/app/store";
 import {PersistGate} from "redux-persist/integration/react";
 import SinglePage from "./components/routes/singlePage/SinglePage";
+import "./firebase";
+import AuthModal from "components/app/appHeader/auth/AuthModal";
 
 const MainRootLazy = React.lazy(() => import("./components/routes/main/Main"));
 
@@ -34,11 +36,27 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/:id",
+                path: ":auth",
+                element: (
+                    <Suspense fallback={<Spinner />}>
+                        <MainRootLazy />
+                    </Suspense>
+                ),
+            },
+            {
+                path: "shop/:id",
                 element: <SinglePage />,
             },
             {
-                path: "/shop/404-not-found",
+                path: "shop/:id/:auth",
+                element: <SinglePage />,
+            },
+            {
+                path: "shop/404-not-found",
+                element: <ErrorPage />,
+            },
+            {
+                path: "shop/404-not-found/:auth",
                 element: <ErrorPage />,
             },
         ],
@@ -48,4 +66,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
-root.render(<RouterProvider router={router} />);
+root.render(
+    <StrictMode>
+        <RouterProvider router={router} />
+    </StrictMode>
+);

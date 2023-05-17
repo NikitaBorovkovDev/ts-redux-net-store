@@ -30,9 +30,7 @@ const SpecialOffers = () => {
                 onSwiper={(swiper: any) => {
                     calcWidth(swiper);
                 }}
-                onSlideChange={(swiper: any) => {
-                    calcWidth(swiper);
-                }}>
+                onSlideChange={(swiper: any) => {}}>
                 <SwiperSlide>
                     <span className="_slide-content extrasmall-bold">
                         Up to 70% Off.&nbsp;

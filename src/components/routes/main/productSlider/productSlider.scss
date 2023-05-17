@@ -6,6 +6,21 @@
         width: 100%;
         padding-bottom: 250px;
         overflow: hidden;
+        @media (min-width: 768px) {
+            width: 600px;
+        }
+        @media (min-width: 992px) {
+            width: 940px;
+        }
+        @media (min-width: 1300px) {
+            width: 1200px;
+        }
+        @media (min-width: 1600px) {
+            width: 1550px;
+        }
+        @media (min-width: 1880px) {
+            width: 1830px;
+        }
     }
     & .swiper-wrapper {
         z-index: 2;

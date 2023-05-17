@@ -1,6 +1,12 @@
 @import "/src/style/variables.scss";
 
 .hero-slider {
+    &__slide-container {
+        @media (max-width: 1500px) {
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+    }
     & .swiper {
         height: 800px;
     }
@@ -28,6 +34,10 @@
     }
 
     & .swiper-pagination {
+        @media (max-width: 1500px) {
+            padding-left: 110px;
+            padding-right: 110px;
+        }
         bottom: 180px;
         gap: 4px;
         font-family: "Ubuntu";

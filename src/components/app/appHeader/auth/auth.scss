@@ -1,0 +1,14 @@
+.auth {
+    cursor: pointer;
+    &__register {
+        background-color: inherit;
+        color: inherit;
+        font-family: inherit;
+    }
+    &__login {
+        font-family: inherit;
+        color: inherit;
+        padding-left: 24px;
+        background: url("/img/login.png") no-repeat left center/16px;
+    }
+}

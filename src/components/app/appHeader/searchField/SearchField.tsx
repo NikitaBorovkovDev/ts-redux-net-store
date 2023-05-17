@@ -104,7 +104,7 @@ const SearchField = () => {
                                 className="search-field__result-list-item"
                                 relative="path"
                                 key={item.id}
-                                to={`/${item.id}`}
+                                to={`/shop/${item.id}`}
                                 style={
                                     selectedElementIndex === index
                                         ? {border: "1px solid #000"}
@@ -143,7 +143,7 @@ const SearchField = () => {
                             className="search-field__result-list-item"
                             relative="path"
                             key={item.id}
-                            to={`/${item.id}`}
+                            to={`/shop/${item.id}`}
                             style={
                                 selectedElementIndex === index
                                     ? {border: "1px solid #000"}

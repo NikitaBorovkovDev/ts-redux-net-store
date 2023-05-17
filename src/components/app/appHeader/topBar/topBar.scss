@@ -26,6 +26,7 @@
 .menu-secondary {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 32px;
     & a {
         cursor: pointer;

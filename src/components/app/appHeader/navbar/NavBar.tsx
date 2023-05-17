@@ -13,9 +13,9 @@ const Navbar = () => {
                 <Link to="/" className="navbar__logo">
                     <img src={Logo} alt="" />
                 </Link>
-                <nav className="navbar__menu">
+                {/* <nav className="navbar__menu">
                     <MenuList />
-                </nav>
+                </nav> */}
                 <SearchField />
                 <div className="navbar__toolbar">
                     <Cart />

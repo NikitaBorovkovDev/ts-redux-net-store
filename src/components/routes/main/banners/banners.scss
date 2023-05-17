@@ -6,6 +6,11 @@
     grid-auto-rows: 500px;
     gap: 16px;
     padding: 0 30px 60px;
+    @media (max-width: 1399.98px) {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 }
 .banner {
     padding: 60px;
@@ -14,6 +19,12 @@
     justify-content: space-between;
     align-items: flex-start;
     border-radius: 4px;
+    @media (max-width: 1399.98px) {
+        height: 500px;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+    }
     &__title {
         margin-top: 12px;
         margin-bottom: 40px;
@@ -30,14 +41,23 @@
     &:nth-child(1) {
         background: url("/img/bannerImg1.jpg") no-repeat center;
         background-size: cover;
+        @media (max-width: 1399.98px) {
+            background-position: top;
+        }
     }
     &:nth-child(2) {
         background: url("/img/bannerImg2.jpg") no-repeat center;
         background-size: cover;
+        @media (max-width: 1399.98px) {
+            background-position: top;
+        }
     }
     &:nth-child(3) {
         background: url("/img/bannerImg3.jpg") no-repeat center;
         background-size: cover;
+        @media (max-width: 1399.98px) {
+            background-position: top;
+        }
     }
     &:nth-child(4n + 1) {
         grid-column-start: 1;

@@ -7,15 +7,18 @@
     display: flex;
     height: 100%;
     align-items: center;
+    justify-content: space-between;
 }
 .navbar__logo {
-    margin-right: 60px;
+    flex: 1 1 calc(100% / 3);
 }
 
 .navbar__menu {
 }
 
 .navbar__toolbar {
+    flex: 1 1 calc(100% / 3);
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }

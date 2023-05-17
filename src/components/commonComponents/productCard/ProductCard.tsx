@@ -25,6 +25,7 @@ const ProductCard = (props: IProductCard) => {
     const [selectedParams, setSelectedParams] = useState<{
         [key: string]: string;
     }>({});
+    const [showModal, setShowModal] = useState(false);
 
     const nameRef = useRef<HTMLParagraphElement>(null);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -45,6 +46,16 @@ const ProductCard = (props: IProductCard) => {
     const isInStorage = productsLocalStorageData.find(
         (productInStorage) => productId === productInStorage.productId
     );
+
+    useEffect(() => {
+        if (
+            Object.keys(product.params).length ===
+                Object.keys(selectedParams).length &&
+            showModal === true
+        ) {
+            setShowModal(false);
+        }
+    }, [selectedParams]);
 
     const handleAddProductToLocalStorage = () => {
         const quantity = 1;
@@ -160,9 +171,6 @@ const ProductCard = (props: IProductCard) => {
             });
         }
     }
-    useEffect(() => {
-        if (product.id === "6") console.log("render!");
-    });
 
     const productNameCut = (name: string) => {
         const nameDivided = name.split(" ");
@@ -205,23 +213,43 @@ const ProductCard = (props: IProductCard) => {
         }
     };
 
+    const requiredParamsKeys = Object.keys(product.params).filter(
+        (item) => !Object.keys(selectedParams).includes(item)
+    );
+    const lastParams = requiredParamsKeys.pop();
+    const warningMessage =
+        "pick " +
+        requiredParamsKeys.join(", ") +
+        (requiredParamsKeys.length ? " and " : "") +
+        lastParams;
+
     return (
         <div
             className={clsx("product-card", `${cardType}-card`)}
             key={product.id}>
-            <img
-                loading="lazy"
-                className={clsx(
-                    "product-card__img",
-                    `product-card__img-${cardType}`
-                )}
-                src={product.imageAndVideo[0].url}
-                alt=""
-            />
+            <div>
+                <img
+                    loading="lazy"
+                    className={clsx(
+                        "product-card__img",
+                        `product-card__img-${cardType}`
+                    )}
+                    src={product.imageAndVideo[0].url}
+                    alt=""
+                />
+                <div className="product-card__stars-rating">
+                    <div
+                        className="product-card__stars-rating-fill"
+                        style={{
+                            width: `${(+product.rating / 5) * 70}px`,
+                        }}></div>
+                </div>
+            </div>
+
             <div className="product-card__description-container">
                 <div className="product-card__description-idle">
                     <div className="product-card__text">
-                        <Link to={`/${product.id}`}>
+                        <Link to={`/shop/${product.id}`}>
                             <div
                                 onMouseOver={(e) => handleTitleMouseHover(e)}
                                 onMouseOut={(e) => handleTitleMouseHover(e)}
@@ -244,13 +272,75 @@ const ProductCard = (props: IProductCard) => {
                         />
                     </div>
                     <div className="product-card__add-menu">
-                        <div className="product-card__add-menu-container">
+                        <div
+                            className={
+                                cardType === CardType.LARGE
+                                    ? ""
+                                    : "product-card__add-menu-container"
+                            }>
                             <div className="product-card__properties">
                                 {paramsElements}
                                 {colorElements}
                             </div>
+                            {showModal ? (
+                                <div className="product-card__error">
+                                    {warningMessage}
+                                </div>
+                            ) : null}
                             <ButtonSolid
-                                onClick={handleAddProductToLocalStorage}>
+                                onClick={
+                                    Object.keys(product.params).length !==
+                                    Object.keys(selectedParams).length
+                                        ? (e) => {
+                                              setShowModal(true);
+                                              const target = e!
+                                                  .currentTarget as HTMLButtonElement;
+                                              console.log(target);
+                                              target.animate(
+                                                  [
+                                                      {
+                                                          transform:
+                                                              "translateX(5%)",
+                                                          offset: 0.15,
+                                                      },
+                                                      {
+                                                          transform:
+                                                              "translateX(-5%)",
+                                                          offset: 0.3,
+                                                      },
+                                                      {
+                                                          transform:
+                                                              "translateX(3%)",
+                                                          offset: 0.45,
+                                                      },
+                                                      {
+                                                          transform:
+                                                              "translateX(-3%)",
+                                                          offset: 0.6,
+                                                      },
+                                                      {
+                                                          transform:
+                                                              "translateX(1%)",
+                                                          offset: 0.75,
+                                                      },
+                                                      {
+                                                          transform:
+                                                              "translateX(-1%)",
+                                                          offset: 0.85,
+                                                      },
+                                                      {
+                                                          transform:
+                                                              "translateX(0)",
+                                                      },
+                                                  ],
+                                                  {
+                                                      duration: 500,
+                                                      iterations: 1,
+                                                  }
+                                              );
+                                          }
+                                        : handleAddProductToLocalStorage
+                                }>
                                 {!isInStorage
                                     ? "Add to cart"
                                     : "Remove from cart"}
