@@ -1,293 +1,293 @@
 [
-    {
-        "id": "1",
-        "name": "Basic hooded sweatshirt in pink",
-        "type": "body",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/product-image2.jpg?raw=true"
-            },
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/product-image.jpg?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "15.50",
-        "discount": "-50",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "2",
-        "name": "Green baby romper",
-        "type": "body",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(1).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "31.00",
-        "discount": "0",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "3",
-        "name": "Check coat with colour contrast",
-        "type": "body",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(2).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "31.00",
-        "discount": "0",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "2.13"
-    },
-    {
-        "id": "4",
-        "name": "Red dangle earrings. Lorem ipsum dolor sit amet",
-        "type": "earrings",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(3).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "15.50",
-        "discount": "-50",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "5",
-        "name": "Baby shoes with laces",
-        "type": "shoes",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(4).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "31.00",
-        "discount": "0",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "3.33"
-    },
-    {
-        "id": "6",
-        "name": "Chrono watch with blue. Lorem ipsum dolor sit amet",
-        "type": "watch",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(5).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "15.50",
-        "discount": "-50",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "7",
-        "name": "Skinny push-up jeans",
-        "type": "jeans",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(6).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "31.00",
-        "discount": "0",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "8",
-        "name": "Leather crossbody bag with ipsum dolor sit amet",
-        "type": "bag",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(7).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "15.50",
-        "discount": "-50",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "9",
-        "name": "Men fashion gray shoes",
-        "type": "shoes",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(8).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "15.50",
-        "discount": "-50",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "10",
-        "name": "Mid-rise slim cropped fit jeans",
-        "type": "jeans",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(9).png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "15.50",
-        "discount": "-50",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "11",
-        "name": "Shirt with insertion lace trims",
-        "type": "body",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image.jpg?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "15.50",
-        "discount": "-50",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    },
-    {
-        "id": "12",
-        "name": "Black and white sport cap",
-        "type": "hat",
-        "imageAndVideo": [
-            {
-                "url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image.png?raw=true"
-            }
-        ],
-        "basePrice": "31.00",
-        "currentPrice": "15.50",
-        "discount": "-50",
-        "params": {
-            "size": {
-                "paramsName": "size",
-                "value": ["36", "37", "38", "39", "40"]
-            },
-            "color": {
-                "paramsName": "color",
-                "value": ["pink", "blue", "yellow"]
-            }
-        },
-        "rating": "4.13"
-    }
+	{
+		"id": "1",
+		"name": "Basic hooded sweatshirt in pink",
+		"type": "body",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/product-image2.jpg?raw=true"
+			},
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/product-image.jpg?raw=true"
+			}
+		],
+		"basePrice": "115.34",
+		"currentPrice": "86.51",
+		"discount": "-25",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "2.11"
+	},
+	{
+		"id": "2",
+		"name": "Green baby romper",
+		"type": "body",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(1).png?raw=true"
+			}
+		],
+		"basePrice": "530.05",
+		"currentPrice": "265.03",
+		"discount": "-50",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "3.4"
+	},
+	{
+		"id": "3",
+		"name": "Check coat with colour contrast",
+		"type": "body",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(2).png?raw=true"
+			}
+		],
+		"basePrice": "62.5",
+		"currentPrice": "15.63",
+		"discount": "-75",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "0.35"
+	},
+	{
+		"id": "4",
+		"name": "Red dangle earrings. Lorem ipsum dolor sit amet",
+		"type": "earrings",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(3).png?raw=true"
+			}
+		],
+		"basePrice": "389.51",
+		"currentPrice": "292.14",
+		"discount": "-25",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "0.4"
+	},
+	{
+		"id": "5",
+		"name": "Baby shoes with laces",
+		"type": "shoes",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(4).png?raw=true"
+			}
+		],
+		"basePrice": "615.85",
+		"currentPrice": "461.89",
+		"discount": "-25",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "4.3"
+	},
+	{
+		"id": "6",
+		"name": "Chrono watch with blue. Lorem ipsum dolor sit amet",
+		"type": "watch",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(5).png?raw=true"
+			}
+		],
+		"basePrice": "823.37",
+		"currentPrice": "205.85",
+		"discount": "-75",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "2.81"
+	},
+	{
+		"id": "7",
+		"name": "Skinny push-up jeans",
+		"type": "jeans",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(6).png?raw=true"
+			}
+		],
+		"basePrice": "139.16",
+		"currentPrice": "104.37",
+		"discount": "-25",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "1.19"
+	},
+	{
+		"id": "8",
+		"name": "Leather crossbody bag with ipsum dolor sit amet",
+		"type": "bag",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(7).png?raw=true"
+			}
+		],
+		"basePrice": "6.95",
+		"currentPrice": "3.48",
+		"discount": "-50",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "1.06"
+	},
+	{
+		"id": "9",
+		"name": "Men fashion gray shoes",
+		"type": "shoes",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(8).png?raw=true"
+			}
+		],
+		"basePrice": "792.53",
+		"currentPrice": "594.40",
+		"discount": "-25",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "4.47"
+	},
+	{
+		"id": "10",
+		"name": "Mid-rise slim cropped fit jeans",
+		"type": "jeans",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image(9).png?raw=true"
+			}
+		],
+		"basePrice": "442.71",
+		"currentPrice": "332.04",
+		"discount": "-25",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "0.72"
+	},
+	{
+		"id": "11",
+		"name": "Shirt with insertion lace trims",
+		"type": "body",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image.jpg?raw=true"
+			}
+		],
+		"basePrice": "967.53",
+		"currentPrice": "967.53",
+		"discount": "0",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "3.55"
+	},
+	{
+		"id": "12",
+		"name": "Black and white sport cap",
+		"type": "hat",
+		"imageAndVideo": [
+			{
+				"url": "https://github.com/nickfluffybr/net_store/blob/master/fetch_img/image.png?raw=true"
+			}
+		],
+		"basePrice": "314.88",
+		"currentPrice": "81.87",
+		"discount": "-74",
+		"params": {
+			"size": {
+				"paramsName": "size",
+				"value": ["36", "37", "38", "39", "40"]
+			},
+			"color": {
+				"paramsName": "color",
+				"value": ["pink", "blue", "yellow"]
+			}
+		},
+		"rating": "1.2"
+	}
 ]
