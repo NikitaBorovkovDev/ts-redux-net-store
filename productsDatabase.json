@@ -15,10 +15,6 @@
 		"currentPrice": "86.51",
 		"discount": "-25",
 		"params": {
-			"size": {
-				"paramsName": "size",
-				"value": ["36", "37", "38", "39", "40"]
-			},
 			"color": {
 				"paramsName": "color",
 				"value": ["pink", "blue", "yellow"]
