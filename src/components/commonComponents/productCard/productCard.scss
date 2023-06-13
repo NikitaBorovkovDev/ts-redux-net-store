@@ -1,161 +1,139 @@
-@import "/src/style/variables.scss";
+@import '/src/style/variables.scss';
 $title-height: 27px;
 
 .large-card {
-    width: 100%;
-    display: flex;
-    & > .product-card__img {
-        flex: 0 0 600px;
-        object-fit: cover;
-        width: 600px;
-        height: 600px;
-    }
-    & > .product-card__description-container {
-        position: relative;
-    }
+	width: 100%;
+	display: flex;
+	& > .product-card__img {
+		flex: 0 0 600px;
+		object-fit: cover;
+		width: 600px;
+		height: 600px;
+	}
+	& > .product-card__description-container {
+		position: relative;
+	}
 }
 .small-card {
-    width: 285px;
+	width: 285px;
 }
 .product-card {
-    border-radius: 4px;
-    position: relative;
-    transition: box-shadow 0.2s ease;
-    margin-bottom: 150px;
-    & .price-container {
-        margin-top: 8px;
-    }
-    &:hover {
-        .product-card__add-menu-container {
-            transform: translateY(0);
-        }
-    }
-    &__img {
-        display: block;
-        width: 100%;
-        height: 320px;
-        background: url("/img/alt-product-image.jpg") no-repeat center;
-        background-size: cover;
-        border-radius: 4px;
-        position: relative;
-    }
-    &__stars-rating {
-        position: absolute;
-        top: 16px;
-        right: 16px;
-        width: 70px;
-        height: 14px;
-        background: url("/img/outline-star.svg") repeat-x 0 0/14px;
-        &-fill {
-            height: 14px;
-            background: url("/img/filled-star.svg") repeat-x 0 0/14px;
-        }
-    }
+	border-radius: 4px;
+	position: relative;
+	transition: box-shadow 0.2s ease;
+	margin-bottom: 150px;
+	& .price-container {
+		margin-top: 8px;
+	}
+	&:hover {
+		.product-card__add-menu-container {
+			transform: translateY(0);
+		}
+	}
+	&__img {
+		display: block;
+		width: 100%;
+		height: 320px;
+		background: url('/img/alt-product-image.jpg') no-repeat center;
+		background-size: cover;
+		border-radius: 4px;
+		position: relative;
+	}
+	&__stars-rating {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		width: 70px;
+		height: 14px;
+		background: url('/img/outline-star.svg') repeat-x 0 0/14px;
+		&-fill {
+			height: 14px;
+			background: url('/img/filled-star.svg') repeat-x 0 0/14px;
+		}
+	}
 
-    &__add-menu {
-        margin-top: 20px;
-        position: relative;
-        width: calc(100% + 32px);
-        left: -16px;
-        padding: 0 16px;
-        overflow: hidden;
-    }
-    &__add-menu-container {
-        transform: translateY(-101%);
-        transition: transform 0.3s;
-    }
-    &__error {
-        text-align: left;
-        display: flex;
-        color: $main-color-danger;
-        align-items: flex-start;
-    }
-    &__img-small {
-        height: 320px;
-    }
-    &__img-large {
-    }
+	&__add-menu {
+		margin-top: 20px;
+		position: relative;
+		width: calc(100% + 32px);
+		left: -16px;
+		padding: 0 16px;
+		overflow: hidden;
+	}
+	&__add-menu-container {
+		transform: translateY(-101%);
+		transition: transform 0.3s;
+	}
+	&__error {
+		text-align: left;
+		display: flex;
+		color: $main-color-danger;
+		align-items: flex-start;
+	}
+	&__img-small {
+		height: 320px;
+	}
+	&__img-large {
+	}
 
-    &__description-container {
-        position: absolute;
-        width: 100%;
-        padding: 16px 16px 16px;
-    }
+	&__description-container {
+		position: absolute;
+		width: 100%;
+		padding: 16px 16px 16px;
+	}
 
-    &__description-idle {
-    }
-    &__text {
-        text-align: left;
-    }
-    &__title {
-        display: flex;
-        align-items: flex-start;
-        color: $main-color-grey-800;
-        position: relative;
-        overflow: hidden;
-        transition: height 0.15s;
-    }
-    &__title-text {
-        width: 100%;
-        position: relative;
-    }
-    &__title-full {
-        white-space: normal;
-    }
+	&__description-idle {
+	}
+	&__text {
+		text-align: left;
+	}
+	&__title {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		color: $main-color-grey-800;
+		position: relative;
+		overflow: hidden;
+		transition: height 0.15s;
+	}
+	&__title-text {
+		display: inline;
+		position: relative;
+	}
+	&__title-full {
+		white-space: normal;
+	}
 
-    &__properties {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-    &__prop-list {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    &__prop-list-item {
-        cursor: pointer;
-        padding: 2px 4px;
-        font-size: 12px;
-        min-width: 24px;
-        border: 1px solid $main-color-grey-400;
-        border-radius: 4px;
-        &:hover {
-            border: 1px solid $main-color-primary;
-        }
-    }
-    &__color-list {
-        display: flex;
-        gap: 8px;
-    }
-    &__color-list-item {
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        border: 1px solid $main-color-grey-400;
-        &:hover {
-            border: 1px solid $main-color-primary;
-        }
-    }
-    &__color {
-        display: block;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-    }
-    &__selected {
-        border: 1px solid $main-color-primary;
-    }
+	&__properties {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	&__prop-list {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	&__prop-list-item {
+		cursor: pointer;
+		padding: 2px 4px;
+		font-size: 12px;
+		min-width: 24px;
+		border: 1px solid $main-color-grey-400;
+		border-radius: 4px;
+		&:hover {
+			border: 1px solid $main-color-primary;
+		}
+	}
+	&__selected {
+		border: 1px solid $main-color-primary;
+	}
 }
 
 .errorAnimation {
-    animation: errorAnimation 0.5s ease-in-out forwards;
+	animation: errorAnimation 0.5s ease-in-out forwards;
 }
 
 @keyframes errorAnimation {

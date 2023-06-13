@@ -1,0 +1,26 @@
+@import '/src/style/variables.scss';
+.product-card {
+	&__color-list {
+		display: flex;
+		gap: 8px;
+	}
+	&__color-list-item {
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		border: 1px solid $main-color-grey-400;
+		&:hover {
+			border: 1px solid $main-color-primary;
+		}
+	}
+	&__color {
+		display: block;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+	}
+}

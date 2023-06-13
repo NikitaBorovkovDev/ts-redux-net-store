@@ -1,29 +1,22 @@
-import PropTypes from "prop-types";
-import clsx from "clsx";
-
-import "./buttonOutline.scss";
+import clsx from 'clsx';
+import './buttonOutline.scss';
+import { memo } from 'react';
 
 type Props = {
-    children: string | JSX.Element;
-    addedClasses: string;
+	children: string | JSX.Element;
+	onClick?: (e?: React.MouseEvent) => any;
+	addedClasses?: string;
 };
 
-const ButtonOutline = (props: Props) => {
-    return (
-        <button className={clsx("btn btn-outline ", props.addedClasses)}>
-            <span className="btn__text btn__text-outline">
-                {props.children}
-            </span>
-        </button>
-    );
-};
-ButtonOutline.defaultProps = {
-    children: "button",
-    addedClasses: "",
-};
-ButtonOutline.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
-        .isRequired,
-};
+const ButtonOutline = memo((props: Props) => {
+	const { children = 'button', addedClasses = '' } = props;
+	return (
+		<button
+			className={clsx('btn btn-outline ', addedClasses)}
+			onClick={props.onClick}>
+			<span className="btn__text btn__text-outline">{children}</span>
+		</button>
+	);
+});
 
 export default ButtonOutline;

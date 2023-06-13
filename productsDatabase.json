@@ -22,6 +22,10 @@
 			"color": {
 				"paramsName": "color",
 				"value": ["pink", "blue", "yellow"]
+			},
+			"type": {
+				"paramsName": "type",
+				"value": ["A", "B", "C"]
 			}
 		},
 		"rating": "2.11"
