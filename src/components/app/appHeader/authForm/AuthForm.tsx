@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './AuthForm.scss';
 import 'style/style.scss';
 import ButtonSolid from 'components/commonComponents/buttonSolid/ButtonSolid';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface IProps {
 	formType: 'login' | 'registration';
@@ -10,6 +11,17 @@ interface IProps {
 
 const AuthForm = (props: IProps) => {
 	const { formType, handleClick } = props;
+
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	const navigateTo = (to: string) => {
+		navigate(
+			location.pathname === '/'
+				? location.pathname + to
+				: location.pathname + '/' + to
+		);
+	};
 
 	const [email, setEmail] = useState('');
 	const [pass, setPass] = useState('');
@@ -57,7 +69,13 @@ const AuthForm = (props: IProps) => {
 				{formType === `login`
 					? `Don't have an account? `
 					: `Already have an account? `}
-				<button className="auth-form__change-form-type-button">
+				<button
+					onClick={() =>
+						formType === 'login'
+							? navigateTo('registration')
+							: navigateTo('login')
+					}
+					className="auth-form__change-form-type-button">
 					{formType === 'login' ? 'Sign in' : 'Sign up'}
 				</button>
 			</p>

@@ -2,6 +2,8 @@
 .auth-form {
 	display: flex;
 	flex-direction: column;
+	max-height: 100%;
+	overflow: scroll;
 	&__heading {
 		color: $main-color-grey-900;
 		text-align: center;

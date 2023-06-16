@@ -1,21 +1,25 @@
-@import "/src/style/variables.scss";
+@import '/src/style/variables.scss';
 
 .top-categories {
-    color: $main-color-grey-800;
-    margin-top: -60px;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    &__image {
-        width: 390px;
-        height: 390px;
-        object-fit: cover;
-    }
+	color: $main-color-grey-800;
+	margin-top: -60px;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	gap: 30px;
+	justify-content: center;
+	padding: 0 30px;
+	@media (max-width: 575.98px) {
+		padding: 0 15px;
+	}
+	&__image {
+		width: 390px;
+		height: 390px;
+		object-fit: cover;
+	}
 
-    &__text {
-        margin-top: 16px;
-        text-align: center;
-    }
+	&__text {
+		margin-top: 16px;
+		text-align: center;
+	}
 }

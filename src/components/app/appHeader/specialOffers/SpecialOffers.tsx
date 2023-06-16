@@ -34,9 +34,9 @@ const SpecialOffers = () => {
 				<SwiperSlide>
 					<span className="_slide-content extrasmall-bold">
 						Up to 70% Off.&nbsp;
-						<a href="#" className="_slide-content__link">
+						<span className="_slide-content__link">
 							Shop our latest sale styles
-						</a>
+						</span>
 					</span>
 				</SwiperSlide>
 				<SwiperSlide>

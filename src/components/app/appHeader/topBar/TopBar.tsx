@@ -8,12 +8,12 @@ const TopBar = () => {
 		<div className="topBar">
 			<div className="container small-regular topBar__container">
 				<ContactPhone />
-				<nav className="menu-secondary">
-					{/* <a>Delivery & returns</a> */}
-					{/* <a>Track order</a> */}
-					{/* <a>Blog</a> */}
-					{/* <Link to="">Contacts</Link> */}
-				</nav>
+				{/* <nav className="menu-secondary">
+					<a>Delivery & returns</a>
+					<a>Track order</a>
+					<a>Blog</a>
+					<Link to="">Contacts</Link>
+				</nav> */}
 				<div className="topBar__right-panel">
 					{/* <LangChange>Eng / $</LangChange> */}
 					<Auth />
