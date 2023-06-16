@@ -5,8 +5,9 @@
 	&__title-container {
 		display: flex;
 		justify-content: space-between;
-		margin-top: 85px;
+		margin-top: 32px;
 		align-items: center;
+		margin-bottom: 20px;
 	}
 	&__title {
 		font-style: normal;
@@ -26,7 +27,44 @@
 		font-weight: 400;
 	}
 	&__desc {
+		border-top: 1px solid #e5e8ed;
+		padding-top: 32px;
 		display: flex;
 		gap: 105px;
+	}
+	&__stars-rating {
+		width: 70px;
+		height: 14px;
+		background: url('/img/outline-star.svg') repeat-x 0 0/14px;
+		&-fill {
+			height: 14px;
+			background: url('/img/filled-star.svg') repeat-x 0 0/14px;
+		}
+	}
+	&__props-container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	&__props-container-right {
+	}
+	&__props-container-left {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+	&__props-color-container {
+		display: flex;
+		gap: 20px;
+		text-transform: capitalize;
+	}
+	&__props-title {
+		margin-bottom: 8px;
+		text-transform: capitalize;
+	}
+	&__price {
+	}
+	&__props-selected-color-text {
+		color: $main-color-grey-600;
 	}
 }

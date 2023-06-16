@@ -1,0 +1,28 @@
+@import '/src/style/variables.scss';
+
+.product-card {
+	&__properties {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	&__prop-list {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	&__prop-list-item {
+		cursor: pointer;
+		padding: 2px 4px;
+		font-size: 12px;
+		min-width: 24px;
+		text-align: center;
+		border: 1px solid $main-color-grey-400;
+		border-radius: 4px;
+		&:hover {
+			border: 1px solid $main-color-primary;
+		}
+	}
+}

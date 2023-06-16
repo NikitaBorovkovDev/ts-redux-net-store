@@ -23,4 +23,7 @@
 		height: 16px;
 		border-radius: 50%;
 	}
+	&__selected {
+		border: 1px solid $main-color-primary !important;
+	}
 }

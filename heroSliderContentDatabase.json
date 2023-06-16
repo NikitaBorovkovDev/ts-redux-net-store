@@ -1,29 +1,27 @@
 [
-    {
-        "subheading": "New collection",
-        "heading": "Menswear 2020",
-        "background": {
-            "image": "https://i.ibb.co/kJ0d0rG/herobg-2x.jpg",
-            "color": "#FBE3D3"
-        },
-        "outlineButton": "Shop sale",
-        "solidButton": "Shop the menswear"
-    },
-    {
-        "subheading": "Old collection",
-        "heading": "Winter 2020",
-        "background": {"image": "https://i.ibb.co/PGFSz0M/winter.jpg"},
-        "outlineButton": "Shop sale",
-        "solidButton": "Shop the menswear"
-    },
-    {
-        "subheading": "New collection",
-        "heading": "",
-        "solidButton": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, dolore?"
-    },
-    {
-        "subheading": "",
-        "heading": "Контент находится в json",
-        "background": {"image": "312", "color": "#FBE3D3"}
-    }
+	{
+		"subheading": "New collection",
+		"heading": "Menswear 2023",
+		"background": {
+			"image": "https://i.ibb.co/kJ0d0rG/herobg-2x.jpg",
+			"color": "#FBE3D3"
+		}
+	},
+	{
+		"subheading": "New collection",
+		"heading": "Winter 2023",
+		"background": { "image": "https://i.ibb.co/PGFSz0M/winter.jpg" }
+	},
+	{
+		"subheading": "New collection",
+		"heading": "Spring 2023",
+		"background": {
+			"image": "https://wallpapers.com/images/featured/qbc6mlnwowjbszld.jpg"
+		}
+	},
+	{
+		"subheading": "New collection",
+		"heading": "Summer 2023",
+		"background": { "image": "https://ibb.co/fvQwT2d" }
+	}
 ]

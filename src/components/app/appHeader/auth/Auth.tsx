@@ -11,34 +11,37 @@ import { removeUser } from 'components/app/userSlice';
 
 const Auth = () => {
 	const authRef = useRef<HTMLDivElement>(null);
-
 	const dispatch = useAppDispatch();
 
 	const params = useParams();
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	const { isAuth, email } = useAuth();
+	const { isAuth } = useAuth();
 
-	const [showModal, setShowModal] = useState(false);
+	const [pathUrl, setPathUrl] = useState(params.auth);
+
+	const navigateToCurrentUrl = () => {
+		navigate(
+			location.pathname.slice(0, location.pathname.lastIndexOf('/'))
+		);
+		setPathUrl('');
+	};
+	const navigateTo = (to: string) => {
+		navigate(
+			location.pathname === '/'
+				? location.pathname + to
+				: location.pathname + '/' + to
+		);
+	};
 
 	useEffect(() => {
 		if (params.auth === 'login' || params.auth === 'registration') {
-			if (isAuth) {
-				navigate(
-					location.pathname.slice(
-						0,
-						location.pathname.lastIndexOf('/')
-					)
-				);
-				setShowModal(false);
-			} else {
-				setShowModal(true);
-			}
-		} else {
-			setShowModal(false);
+			setPathUrl(params.auth);
+		} else if (params.auth) {
+			navigateToCurrentUrl();
 		}
-	}, [params.auth, isAuth]);
+	}, [location]);
 
 	return isAuth ? (
 		<div className="auth small-regular" ref={authRef}>
@@ -52,33 +55,25 @@ const Auth = () => {
 		</div>
 	) : (
 		<div className="auth small-regular" ref={authRef}>
-			{showModal &&
-				(params.auth === 'login' || params.auth === 'registration') &&
+			{(pathUrl === 'login' || pathUrl === 'registration') &&
 				createPortal(
 					<AuthModal
 						parentRef={authRef}
-						onClose={() =>
-							navigate(
-								location.pathname.slice(
-									0,
-									location.pathname.lastIndexOf('/')
-								)
-							)
-						}>
-						{params.auth === 'login' ? <Login /> : <Registration />}
+						onClose={navigateToCurrentUrl}>
+						{pathUrl === 'login' ? <Login /> : <Registration />}
 					</AuthModal>,
 					document.body
 				)}
 			<span className="auth__text">
 				<button
 					className="auth__login small-regular"
-					onClick={() => navigate('login')}>
+					onClick={() => navigateTo('login')}>
 					Log in
 				</button>{' '}
 				/{' '}
 				<button
 					className="auth__register small-regular"
-					onClick={() => navigate('registration')}>
+					onClick={() => navigateTo('registration')}>
 					Register
 				</button>
 			</span>

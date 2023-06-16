@@ -10,9 +10,12 @@ interface IPrice {
 	cardType: CardType;
 	fontSize?: number;
 	oldPriceMarginLeft?: number;
+	classNameContainer?: string;
 }
 
 const Price = memo((props: IPrice) => {
+	const { classNameContainer = '' } = props;
+
 	const currentPriceStyles: { fontSize?: string } = {};
 	const oldPriceStyles: { fontSize?: string; marginLeft?: string } = {};
 	if (props.fontSize) {
@@ -25,7 +28,7 @@ const Price = memo((props: IPrice) => {
 		oldPriceStyles.marginLeft = `${props.oldPriceMarginLeft}px`;
 	if (props.discount !== '0' && props.discount) {
 		return (
-			<div className="price-container">
+			<div className={clsx('price-container', classNameContainer)}>
 				<div
 					style={currentPriceStyles}
 					className={clsx(

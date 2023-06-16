@@ -21,7 +21,9 @@ const ColorPicker = memo((props: IProps) => {
 	} = props;
 
 	let productValue = product.params.color.value;
-
+	if (!product.params.color) {
+		return null;
+	}
 	return (
 		<ul className={clsx('product-card__color-list', className)}>
 			{productValue.map((color, index) => (
