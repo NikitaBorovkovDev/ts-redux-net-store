@@ -1,21 +1,22 @@
-@import "/src/style/variables.scss";
+@import '/src/style/variables.scss';
 
 .btn {
-    border: 1px solid $main-color-primary;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 40px;
-    border-radius: 4px;
-    cursor: pointer;
-    min-height: 52px;
+	border: 1px solid $main-color-primary;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 40px;
+	border-radius: 4px;
+	cursor: pointer;
+	min-height: 52px;
 }
 .btn__text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Lato";
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: 0.5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	white-space: nowrap;
+	font-family: 'Lato';
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: 0.5px;
 }

@@ -183,12 +183,14 @@ const SinglePage = () => {
 					</div>
 
 					<div className="product-page__desc">
-						<img
-							width={600}
-							height={600}
-							src={product.imageAndVideo[0].url}
-							alt="product image"
-						/>
+						<div className="product-page__img-container">
+							<img
+								className="product-page__img"
+								src={product.imageAndVideo[0].url}
+								alt="product image"
+							/>
+						</div>
+
 						<div className="product-page__props-container">
 							<div className="product-page__props-container-left">
 								<Price

@@ -1,60 +1,62 @@
-@import "/src/style/variables.scss";
+@import '/src/style/variables.scss';
 .input-number {
-    border: 1px solid #d7dadd;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    &-focused,
-    &:hover {
-        border-color: $main-color-success;
-    }
-    &-handler {
-    }
-    &-handler-wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        width: 16px;
+	border: 1px solid #d7dadd;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	&-focused,
+	&:hover {
+		border-color: $main-color-success;
+	}
+	&-handler {
+	}
+	&-handler-wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 3px;
+		width: 16px;
 
-        margin-right: 12px;
-    }
-    &-handler-inner {
-        border: 5px solid transparent;
-        -webkit-user-select: none;
-        user-select: none;
-        cursor: pointer;
-        &-up,
-        &-down {
-            transition: border-bottom 0.3s;
-        }
-        &-up {
-            border-bottom: 7px solid $main-color-grey-900;
-            &:hover {
-                border-bottom: 7px solid $main-color-primary;
-            }
-        }
-        &-down {
-            border-top: 8px solid $main-color-grey-900;
-            &:hover {
-                border-top: 8px solid $main-color-primary;
-            }
-        }
-    }
-    &-input-wrap {
-        order: -1;
-        border-radius: 4px;
-    }
-    &-input {
-        &:focus-visible {
-            outline: none;
-            outline-offset: 0;
-        }
-        font-family: "Lato";
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 150%;
-        margin: 9px 0 9px 12px;
-        height: 100%;
-        width: 100%;
-    }
+		margin-right: 12px;
+	}
+	&-handler-inner {
+		border: 5px solid transparent;
+		-webkit-user-select: none;
+		user-select: none;
+		cursor: pointer;
+		&-up,
+		&-down {
+			transition: border-bottom 0.3s;
+		}
+		&-up {
+			border-bottom: 7px solid $main-color-grey-900;
+			&:hover {
+				border-bottom: 7px solid $main-color-primary;
+			}
+		}
+		&-down {
+			border-top: 8px solid $main-color-grey-900;
+			&:hover {
+				border-top: 8px solid $main-color-primary;
+			}
+		}
+	}
+	&-input-wrap {
+		order: -1;
+		border-radius: 4px;
+		margin: 9px 0 9px 12px;
+	}
+	&-input {
+		&:focus-visible {
+			outline: none;
+			outline-offset: 0;
+		}
+		font-family: 'Lato';
+		display: block;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 150%;
+
+		height: 100%;
+		width: 100%;
+	}
 }
